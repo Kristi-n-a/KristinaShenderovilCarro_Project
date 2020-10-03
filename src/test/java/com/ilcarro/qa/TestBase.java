@@ -42,7 +42,7 @@ public class TestBase {
         }
     }
 
-    @AfterMethod
+    @AfterMethod(enabled = false)
     public void tearDown(){
         wd.quit();
     }
