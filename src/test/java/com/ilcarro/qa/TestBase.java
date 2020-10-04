@@ -41,6 +41,29 @@ public class TestBase {
             return false;
         }
     }
+    public boolean isPresentElementSearch(){
+        try{
+            wd.findElements(By.xpath(" //header/section[1]/ul[1]/li[1]/a[1]"));
+            return true;
+        }catch(org.openqa.selenium.NoSuchElementException ex){
+            return false;
+        }
+    }
+    public boolean isPresentElementLetTheCar(){
+        return wd.findElements(By.xpath("//header/section[1]/ul[1]/li[2]/a[1]")).size()>0;
+    }
+
+    public boolean isPresentElementSingUp(){
+        try{
+            wd.findElements(By.cssSelector("[href=\"/signup\"]"));
+            return true;
+        }catch (NoSuchElementException ex) {
+            return false;
+        }
+    }
+    public boolean isPresentElementLogIn(){
+        return wd.findElements(By.cssSelector("[href=\"/login\"]")).size()>0;
+    }
 
     @AfterMethod(enabled = false)
     public void tearDown(){
