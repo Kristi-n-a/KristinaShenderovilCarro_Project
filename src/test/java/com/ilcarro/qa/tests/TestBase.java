@@ -7,17 +7,33 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.annotations.*;
 
+import java.lang.reflect.Method;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
+
 
 public class TestBase {
     static WebDriver wd;
 
+    Logger logger = LoggerFactory.getLogger(TestBase.class);
+
     @BeforeSuite
     public void setUp(){
         init();
+    }
+
+    @BeforeMethod
+    public void startTest(Method m){
+        logger.info("Start test" + m.getName());
+    }
+
+    @AfterMethod
+    public void stopTest(Method m){
+        logger.info("Stop test"+ m.getName());
     }
 
     public void init() {
