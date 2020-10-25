@@ -21,10 +21,10 @@ public class CreateAccountTests extends TestBase {
         Assert.assertTrue(isRegistrationFormOpened());
         fillRegistrationForm(
                 new User()
-                        .setfName("LS")
-                        .setlName("DV")
-                        .setEmail("Kris@88.com")
-                        .setPassword("13Aqqqqqqq"));
+                        .setfName("KR")
+                        .setlName("SH")
+                        .setEmail("Kris-tA@88.com")
+                        .setPassword("13werrttioo"));
 
         selectPolicyCheckBox();
         pause(2000);
@@ -42,9 +42,9 @@ public class CreateAccountTests extends TestBase {
         Assert.assertTrue(isRegistrationFormOpened());
 
         fillRegistrationForm(new User()
-                .setfName("Vkra")
-                .setlName("Kfds")
-                .setEmail("vwer.kits1@gmail.com"));
+                .setfName("Vovka")
+                .setlName("Kats")
+                .setEmail("vova.kats1@gmail.com"));
 
         selectPolicyCheckBox();
         pause(3000);
