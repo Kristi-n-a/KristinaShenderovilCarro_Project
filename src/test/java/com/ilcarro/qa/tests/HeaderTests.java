@@ -1,4 +1,4 @@
-package com.ilcarro.qa;
+package com.ilcarro.qa.tests;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 import java.io.ByteArrayInputStream;
 
-public class HeaderTests extends TestBase {
+/*public class HeaderTests extends TestBase {
 
     @BeforeMethod
     public void findElementSearch(){
@@ -28,4 +28,4 @@ public class HeaderTests extends TestBase {
     }
 
 
-}
+}*/

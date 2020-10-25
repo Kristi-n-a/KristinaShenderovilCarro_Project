@@ -1,6 +1,11 @@
 plugins {
     id 'java'
 }
+compileJava.options.encoding = 'UTF-8'
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
 
 group 'org.example'
 version '1.0-SNAPSHOT'
@@ -16,4 +21,11 @@ dependencies {
 }
 test{
     useTestNG()
+}
+
+task testRegr(type: Test){
+    useTestNG()
+    if (project.hasProperty('browser')) {
+        systemProperty 'browser', "${browser}"
+    }
 }
