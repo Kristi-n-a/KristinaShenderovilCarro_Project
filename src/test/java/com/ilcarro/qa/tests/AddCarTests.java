@@ -1,63 +1,47 @@
 package com.ilcarro.qa.tests;
 
 import com.ilcarro.qa.model.Car;
+import org.openqa.selenium.By;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class AddCarTests extends TestBase {
+    @BeforeClass
+    public void ensurePreconditions() throws InterruptedException {
 
-
-    @Test
-    public void testFormLetTheCarWorkForLoggedInUser() throws InterruptedException {
-        if(!isUserLoggedIn()){
-            logIn();
+        if (!app.session().isUserLoggedIn()) {
+            app.session().login("Kris@88.com", "13Aqqqqqqq");
         }
-
-        openAddCarFormFromHeader();
-        fillCarForm(
-                new Car().setCountry("Israel").setAddress("Balfour Street").setDistance("550")
-                        .setSerialNumber("987678955").setBrand("BMW").setModel("x5").setYear("2002")
-                        .setEngine("V8").setFuelConsumption("8").setTransmission("automatic")
-                        .setWd("wedfrt").setHorsepower("110").setTorque("3456").setDoors("4")
-                        .setSeats("5").setClasss("E").setAbout("dhfhjkglglgkmfjdk")
-                        .setFeature("dfghjkl").setPrice("87"));
-
-        pause(2000);
-        submitForm();
 
     }
 
     @Test
-    public void testFormLetTheCarWorkForNotLoggedInUser() throws InterruptedException {
-        if(isUserLoggedIn()){
-            logOut();
-        }
-        openAddCarFormFromHeader();
-        fillCarForm(
-                new Car().setCountry("Israel").setAddress("Balfour Street").setDistance("550")
-                        .setSerialNumber("987678955").setBrand("BMW").setModel("x5").setYear("2002")
-                        .setEngine("V8").setFuelConsumption("8").setTransmission("automatic")
-                        .setWd("wedfrt").setHorsepower("110").setTorque("3456").setDoors("4")
-                        .setSeats("5").setClasss("E").setAbout("dhfhjkglglgkmfjdk")
-                        .setFeature("dfghjkl").setPrice("87"));
+    public void testFormLetTheCarWork() throws InterruptedException {
+        app.header().addCar();
+        //app.header().click(By.cssSelector(".let-carwork-style_let_car__location__30BIh"));
 
-        pause(2000);
-        submitForm();
-
-    }
-
-    @Test
-    public void NegativeTestAddCarWithoutDorsInfo(){
-        openAddCarFormFromHeader();
-        fillCarForm(
-                new Car().setCountry("Israel").setAddress("Balfour Street").setDistance("550")
-                        .setSerialNumber("987678956").setBrand("Mercedes").setModel("x5").setYear("2002")
-                        .setEngine("V8").setFuelConsumption("8").setTransmission("automatic")
-                        .setWd("wedfrt").setHorsepower("110").setTorque("3456")
-                        .setSeats("5").setClasss("E").setAbout("dhfhjkglglgkmfjdk")
-                        .setFeature("dfghjkl").setPrice("87"));
-
-        submitForm();
-
+        app.car().fillAddCarForm(new Car()
+                .setCountry("Israel")
+                .setAddress("Balfour 20")
+                .setDistance("500")
+                .setSerialNumber("765-261-999")
+                .setBrand("Mazda")
+                .setModel("x 5")
+                .setYear("2015")
+                .setEngine("HC123456789HC")
+                .setFuelConsumption("6.5")
+                .setFuel("petrol")
+                .setTransmission("full drive")
+                .setWd("4WD")
+                .setHorsepower("149")
+                .setTorque("120")
+                .setDoors("5")
+                .setSeats("5")
+                .setClasss("C")
+                .setAbout("Very good car")
+                .setFeature("new one, non smoking, navigator, baby chair")
+                .setPrice("55"));
+        app.car().submitForm();
     }
 
 }

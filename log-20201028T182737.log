@@ -1,0 +1,9 @@
+18:27:47.025 [Test worker] INFO  com.ilcarro.qa.tests.TestBase - Start test testSignUpFromDataProvider
+18:27:52.038 [Test worker] INFO  com.ilcarro.qa.tests.TestBase - Stop test testSignUpFromDataProvider
+18:27:52.038 [Test worker] INFO  com.ilcarro.qa.tests.TestBase - ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+18:27:52.039 [Test worker] INFO  com.ilcarro.qa.tests.TestBase - Start test testSignUpFromDataProvider
+18:27:55.338 [Test worker] INFO  com.ilcarro.qa.tests.TestBase - Stop test testSignUpFromDataProvider
+18:27:55.339 [Test worker] INFO  com.ilcarro.qa.tests.TestBase - ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+18:27:55.343 [Test worker] INFO  com.ilcarro.qa.tests.TestBase - Start test testSignUpFromDataProvider
+18:28:08.351 [Test worker] INFO  com.ilcarro.qa.tests.TestBase - Stop test testSignUpFromDataProvider
+18:28:08.351 [Test worker] INFO  com.ilcarro.qa.tests.TestBase - ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

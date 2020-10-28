@@ -1,0 +1,12 @@
+18:48:12.316 [Test worker] INFO  com.ilcarro.qa.tests.TestBase - Start test testSignUpFromDataProviderwith data[]
+18:48:16.077 [Test worker] INFO  com.ilcarro.qa.tests.TestBase - Login form present. actual result: true expected result is : true
+18:48:16.108 [Test worker] INFO  com.ilcarro.qa.tests.TestBase - Stop test testSignUpFromDataProvider
+18:48:16.108 [Test worker] INFO  com.ilcarro.qa.tests.TestBase - ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+18:48:16.109 [Test worker] INFO  com.ilcarro.qa.tests.TestBase - Start test testSignUpFromDataProviderwith data[]
+18:48:29.199 [Test worker] INFO  com.ilcarro.qa.tests.TestBase - Login form present. actual result: false expected result is : true
+18:48:39.261 [Test worker] INFO  com.ilcarro.qa.tests.TestBase - Stop test testSignUpFromDataProvider
+18:48:39.261 [Test worker] INFO  com.ilcarro.qa.tests.TestBase - ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+18:48:39.261 [Test worker] INFO  com.ilcarro.qa.tests.TestBase - Start test testSignUpFromDataProviderwith data[]
+18:48:52.568 [Test worker] INFO  com.ilcarro.qa.tests.TestBase - Login form present. actual result: false expected result is : true
+18:49:02.598 [Test worker] INFO  com.ilcarro.qa.tests.TestBase - Stop test testSignUpFromDataProvider
+18:49:02.598 [Test worker] INFO  com.ilcarro.qa.tests.TestBase - ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
