@@ -1,4 +1,3 @@
-package com.ilcarro.qa.tests;
 import com.ilcarro.qa.model.User;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -12,7 +11,32 @@ import java.util.List;
 
 public class CreateAccountTests extends TestBase {
     //preconditions: user shoud be logged out
+    @DataProvider
+    public Iterator<Object[]>validUser(){
+        List<Object[]> list = new ArrayList<>();
+        list.add(new Object[]{"fName1", "lname", "lname+2@gmail.com", "1Qaaaaaaa"});
+        list.add(new Object[]{"aab", "FF", "1111+2@ss.com", "lkjhgfd2Q"});
+        list.add(new Object[]{"112", "66", "11_11+2@ss.com", "lkjhgfd2Q"});
 
+        return list.iterator();
+    }
+
+    @DataProvider
+    public Iterator<Object[]> validUserFromCSV() throws IOException {
+        List<Object[]> list = new ArrayList<>();
+        BufferedReader reader = new BufferedReader(new FileReader(
+                new File("src/test/resources/tests_newUser.csv")));
+        String line = reader.readLine();
+
+        while (line != null){
+            String[] split = line.split(",");
+            list.add(new Object[]{new User().setfName(split[0]).setlName(split[1])
+                    .setEmail(split[2]).setPassword(split[3])});
+            line = reader.readLine();
+        }
+
+        return list.iterator();
+    }
 
     @BeforeMethod
     public void ensurePreconditions() {
@@ -25,10 +49,10 @@ public class CreateAccountTests extends TestBase {
     public void testSignUp() throws InterruptedException {
         app.header().clickSignUp();
         app.session().fillRegistrationForm(new User()
-                .setfName("Kr")
-                .setlName("Sh")
-                .setEmail("Kris88@aa.com")
-                .setPassword("13Aqqqqqqq"));
+                .setfName("AS")
+                .setlName("FV")
+                .setEmail("aa" + System.currentTimeMillis() + "@bb318.com")
+                .setPassword("1Aaaaaaaa"));
 
         //click submit button
         app.session().submitForm();
@@ -38,7 +62,7 @@ public class CreateAccountTests extends TestBase {
         logger.info(String.valueOf(app.session().isLoginFormPresent()));
     }
 
-    @Test(dataProvider = "validUser", dataProviderClass = DataProvider.class)
+    @Test(dataProvider = "validUser")
     public void testSignUpFromDataProvider(
             String fName, String lName, String email, String password ) throws InterruptedException {
         app.header().clickSignUp();
@@ -58,11 +82,11 @@ public class CreateAccountTests extends TestBase {
 
     }
 
-    @Test(dataProvider = "validUserFromCSV", dataProviderClass = DataProvider.class)
+    @Test(dataProvider = "validUserFromCSV")
     public void testSignUpFromCSVDataProvider(User user) throws InterruptedException {
         app.header().clickSignUp();
         app.session().fillRegistrationForm(user);
-        //click
+        //click submit button
         app.session().submitForm();
 
         logger.info("Login form present. actual result: "+ app.session().isLoginFormPresent()
