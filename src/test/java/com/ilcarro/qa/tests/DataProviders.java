@@ -38,7 +38,9 @@ public class DataProviders {
         }
 
         return list.iterator();
-    } @DataProvider
+    }
+
+    @DataProvider
     public Iterator<Object[]> validCarFromCSV() throws IOException {
         List<Object[]> list = new ArrayList<>();
         BufferedReader reader = new BufferedReader(new FileReader(

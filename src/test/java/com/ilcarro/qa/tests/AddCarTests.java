@@ -16,7 +16,7 @@ public class AddCarTests extends TestBase {
 
     }
 
-    @Test
+   @Test
     public void testFormLetTheCarWork() throws InterruptedException {
         app.header().addCar();
         //app.header().click(By.cssSelector(".let-carwork-style_let_car__location__30BIh"));
@@ -48,9 +48,9 @@ public class AddCarTests extends TestBase {
     @Test(dataProvider = "validCarFromCSV", dataProviderClass = DataProvider.class)
     public void testFormLetTheCarWorkFromDataProvider(Car car) throws InterruptedException {
         app.header().addCar();
-        //app.header().click(By.cssSelector(".let-carwork-style_let_car__location__30BIh"));
+      //  app.header().click(By.cssSelector(".let-carwork-style_let_car__location__30BIh"));
 
-        app.car();
+        app.car().fillAddCarForm(car);
         app.car().submitForm();
     }
 }
