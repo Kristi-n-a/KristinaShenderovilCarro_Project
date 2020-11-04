@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ilcarro.qa.tests.LoginTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-11-04T16:12:57" hostname="LAPTOP-0J777B81" time="4.866">
+  <properties/>
+  <testcase name="loginRegisteredUserPositiveTest" classname="com.ilcarro.qa.tests.LoginTests" time="4.866"/>
+  <system-out><![CDATA[18:12:51.800 [Test worker] INFO  com.ilcarro.qa.tests.TestBase - Start test loginRegisteredUserPositiveTestwith data[]
+18:13:02.784 [Test worker] INFO  com.ilcarro.qa.tests.TestBase - PASSED : Test method loginRegisteredUserPositiveTest
+18:13:02.785 [Test worker] INFO  com.ilcarro.qa.tests.TestBase - Stop test 
+18:13:02.791 [Test worker] INFO  com.ilcarro.qa.tests.TestBase - ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,2 +1,0 @@
-15:52:23.610 [Test worker] INFO  com.ilcarro.qa.tests.TestBase - Start testloginRegisteredUserPositiveTest
-15:52:54.898 [Test worker] INFO  com.ilcarro.qa.tests.TestBase - Stop testloginRegisteredUserPositiveTest
